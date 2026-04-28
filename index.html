@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+
+
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
@@ -56,18 +58,54 @@
         }
 
         /* CARRUSEL */
-        .carousel {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-        }
+/* CARRUSEL MEJORADO */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
 
-        .carousel img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: none;
-        }
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTO SOBRE IMAGEN */
+.texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.texto h2 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.texto p {
+    margin-top: 10px;
+    font-size: 1em;
+}
 
         .carousel img.active {
             display: block;
@@ -171,17 +209,38 @@
 
 <!-- CARRUSEL -->
 
-
-
 <div class="carousel">
-    <img src="img/imagen1.jpg" class="active">
-    <img src="img/imagen2.jpg">
-    <img src="img/imagen3.jpg">
-</div> 
+
+    <div class="slide active">
+        <img src="img/imagen1.jpg">
+        <div class="texto">
+            <h2>No estás solo/a</h2>
+            <p>El diagnóstico es difícil, pero acompañado se hace más llevadero</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="img/imagen2.jpg">
+        <div class="texto">
+            <h2>Acompañamiento real</h2>
+            <p>Desde la experiencia y el conocimiento profesional</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="img/imagen3.jpg">
+        <div class="texto">
+            <h2>Aprender a vivir con DT1</h2>
+            <p>Con herramientas claras y apoyo constante</p>
+        </div>
+    </div>
+
+</div>
 
 <!-- HERO -->
 <section class="hero">
-    <h2>No tienes que vivirlo solo/a</h2>
+    <h2>Acompañamiento en Diabetes Tipo 1</h2>
+
 </section>
 
 <!-- ABOUT -->
@@ -230,15 +289,15 @@
 <!-- SCRIPT -->
 <script>
     let index = 0;
-    const images = document.querySelectorAll(".carousel img");
+    const slides = document.querySelectorAll(".slide");
 
-    function showNextImage() {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
+    function showNextSlide() {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
     }
 
-    setInterval(showNextImage, 3000);
+    setInterval(showNextSlide, 3000);
 </script>
 
 </body>
