@@ -8,61 +8,65 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin:0;
     font-family:'Poppins';
     background:#E8E5DF;
 }
 
-        nav {
-            background-color: #5B53B6;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* NAVBAR */
+nav {
+    background-color: #5B53B6;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap; /* 🔥 clave */
+}
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-nav .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.logo img {
+    width: 45px;
+}
 
-nav .logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-nav span {
+.logo span {
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.1em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
 }
 
 .nav-links a {
     color:white;
-    margin-left:20px;
     text-decoration: none;
+    font-size: 0.95em;
 }
 
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
+/* HERO */
 .hero {
     background:#8F95CC;
     color:white;
     text-align:center;
-    padding:60px 20px;
+    padding:50px 20px;
 }
 
+.hero h1 {
+    font-size: 1.8rem;
+}
+
+/* ABOUT */
 .about {
-    max-width:900px;
+    max-width:700px; /* 🔥 mejor lectura */
     margin:auto;
     padding:40px 20px;
     text-align:center;
@@ -74,29 +78,64 @@ nav span {
     margin-bottom:20px;
 }
 
+.about p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
 footer {
     background:#5B53B6;
     color:white;
     text-align:center;
     padding:20px;
 }
-        @media (max-width: 600px) {
-            .about {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
+
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    /* ABOUT */
+    .about {
+        padding:30px 15px;
+    }
+
+    .about img {
+        width:140px; /* 🔥 mejor proporción móvil */
+    }
+
+    .about p {
+        font-size: 0.95rem;
+    }
+
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-
     <div class="logo">
-    <img src="img/logo.jpg" alt="Logo">
-    <span>Dulce Compañía</span>
+        <img src="img/logo.jpg" alt="Logo">
+        <span>Dulce Compañía</span>
     </div>
+
     <div class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
@@ -111,7 +150,7 @@ footer {
 
 <section class="about">
 
-    <img src="img/anai.png">
+    <img src="img/anai.png" alt="Anaí Troncoso">
 
     <p>
         Soy Anaí Troncoso, nutricionista y mamá de dos niñas con Diabetes Tipo 1.
@@ -120,9 +159,10 @@ footer {
     <p>
         He vivido en carne propia el impacto del diagnóstico, el miedo inicial y el desafío de aprender a convivir con la diabetes en el día a día.
     </p>
-     <p>
+
+    <p>
         Hoy acompaño a otras familias en ese primer tramo, cuando más se necesita contención, claridad y apoyo real.
-    </p>   
+    </p>
 
 </section>
 

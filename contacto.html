@@ -8,71 +8,97 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin:0;
     font-family:'Poppins';
     background:#E8E5DF;
 }
 
-        nav {
-            background-color: #5B53B6;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* NAVBAR */
+nav {
+    background-color: #5B53B6;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap; /* 🔥 clave */
+}
 
-nav .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-nav .logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
+.logo img {
+    width: 45px;
+}
 
-nav span {
+.logo span {
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.1em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
 }
 
 .nav-links a {
     color:white;
-    margin-left:20px;
     text-decoration: none;
+    font-size: 0.95em;
 }
 
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
+/* HERO */
 .hero {
     background:#8F95CC;
     color:white;
     text-align:center;
-    padding:60px 20px;
+    padding:50px 20px;
 }
 
+.hero h1 {
+    font-size: 1.8rem;
+}
+
+/* CONTACTO */
 .contact {
-    text-align:center;
-    padding:40px;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-.btn {
-    background:#E3B24A;
-    color:white;
-    padding:12px 20px;
-    text-decoration:none;
-    border-radius:5px;
+.info-contacto p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0;
+    font-size: 1.05em;
 }
 
+.icono {
+    width: 22px;
+}
+
+/* BOTÓN */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    padding: 14px 20px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+/* FOOTER */
 footer {
     background:#5B53B6;
     color:white;
@@ -80,52 +106,45 @@ footer {
     padding:20px;
 }
 
-.contact {
-    text-align: center;
-    padding: 50px 20px;
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    /* HERO */
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    /* CONTACTO */
+    .info-contacto p {
+        flex-direction: column; /* icono arriba */
+        font-size: 1em;
+    }
+
+    .icono {
+        width: 26px;
+    }
+
+    /* BOTÓN */
+    .btn-whatsapp {
+        width: 100%; /* botón ancho completo */
+        font-size: 1.1rem;
+        padding: 16px;
+    }
+
 }
 
-.subtexto {
-    margin-bottom: 30px;
-    color: #555;
-}
-
-/* INFO */
-.info-contacto p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-    font-size: 1.1em;
-}
-
-/* ICONOS */
-.icono {
-    width: 22px;
-}
-
-.icono-btn {
-    width: 20px;
-}
-
-/* BOTÓN */
-.btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 30px; /* 👈 separación clave */
-    padding: 12px 20px;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-}
-
-.btn-whatsapp:hover {
-    opacity: 0.9;
-}
 </style>
 </head>
 
@@ -136,6 +155,7 @@ footer {
         <img src="img/logo.jpg" alt="Logo">
         <span>Dulce Compañía</span>
     </div>
+
     <div class="nav-links">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
@@ -149,22 +169,9 @@ footer {
     <p>Estoy aquí para acompañarte</p>
 </section>
 
-<!-- <section class="contact">
-
-    <p><strong>WhatsApp:</strong> +56 9 9815 8386</p>
-    <p><strong>Email:</strong> anainutricionista@gmail.com</p>
-
-    <a href="https://wa.me/56998158386" target="_blank" class="btn">
-        Escribir por WhatsApp
-    </a>
-
-</section> -->
-
 <section class="contact">
 
-    <!-- DATOS -->
     <div class="info-contacto">
-
         <p>
             <img src="img/whatsapp.png" class="icono">
             +56 9 9815 8386
@@ -174,12 +181,9 @@ footer {
             <img src="img/email.png" class="icono">
             anainutricionista@gmail.com
         </p>
-
     </div>
 
-    <!-- BOTÓN -->
     <a href="https://wa.me/56998158386" target="_blank" class="btn-whatsapp">
-        <!-- <img src="img/whatsapp.png" class="icono-btn"> -->
         Escribir por WhatsApp
     </a>
 
