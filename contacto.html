@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Contacto</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family:'Poppins';
+    background:#E8E5DF;
+}
+
+        nav {
+            background-color: #5B53B6;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+nav .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+nav span {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.nav-links a {
+    color:white;
+    margin-left:20px;
+    text-decoration: none;
+}
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+.hero {
+    background:#8F95CC;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.contact {
+    text-align:center;
+    padding:40px;
+}
+
+.btn {
+    background:#E3B24A;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+footer {
+    background:#5B53B6;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.subtexto {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* INFO */
+.info-contacto p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+/* ICONOS */
+.icono {
+    width: 22px;
+}
+
+.icono-btn {
+    width: 20px;
+}
+
+/* BOTÓN */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px; /* 👈 separación clave */
+    padding: 12px 20px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="img/logo.jpg" alt="Logo">
+        <span>Dulce Compañía</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="sobremi.html">Sobre mí</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Agenda tu primera conversación</h1>
+    <p>Estoy aquí para acompañarte</p>
+</section>
+
+<!-- <section class="contact">
+
+    <p><strong>WhatsApp:</strong> +56 9 9815 8386</p>
+    <p><strong>Email:</strong> anainutricionista@gmail.com</p>
+
+    <a href="https://wa.me/56998158386" target="_blank" class="btn">
+        Escribir por WhatsApp
+    </a>
+
+</section> -->
+
+<section class="contact">
+
+    <!-- DATOS -->
+    <div class="info-contacto">
+
+        <p>
+            <img src="img/whatsapp.png" class="icono">
+            +56 9 9815 8386
+        </p>
+
+        <p>
+            <img src="img/email.png" class="icono">
+            anainutricionista@gmail.com
+        </p>
+
+    </div>
+
+    <!-- BOTÓN -->
+    <a href="https://wa.me/56998158386" target="_blank" class="btn-whatsapp">
+        <!-- <img src="img/whatsapp.png" class="icono-btn"> -->
+        Escribir por WhatsApp
+    </a>
+
+</section>
+
+<footer>
+    © 2026 Dulce Compañía
+</footer>
+
+</body>
+</html>
